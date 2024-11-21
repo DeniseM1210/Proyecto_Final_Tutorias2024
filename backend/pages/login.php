@@ -11,8 +11,9 @@
 
 <body>
     <?php
-        require_once('menu_principal.php')
+    require_once('menu_principal.php')
     ?>
+    <form action="../controllers/validar_usuario.php" method="POST">
     <div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
         <div class="card" style="width: 100%; max-width: 400px;">
             <div class="card-body">
@@ -20,19 +21,24 @@
                 <form>
                     <!-- Campo de Nombre de Usuario -->
                     <div class="mb-3">
-                        <label for="username" class="form-label">Usuario</label>
-                        <input type="text" class="form-control" id="username" placeholder="Usuario" required>
+                    <label  class="form-label">Tipo</label>
+                        <select  name="tipo" class="form-select" aria-label="Default select example">
+                            <option value="alumno">Alumno</option>
+                            <option value="tutor">Tutor</option>
+                            <option value="jefe">Jefe de Division</option>
+                            <option value="psicologo">Prsicologo</option>
+                        </select>
                     </div>
 
                     <div class="mb-3">
-                        <label for="username" class="form-label">No. Control</label>
-                        <input type="text" class="form-control" id="num_control" placeholder="No. Control" required>
+                        <label for="username" class="form-label">Usuario</label>
+                        <input type="text" name="usuario" class="form-control" id="usuario" placeholder="Usuario" required>
                     </div>
 
                     <!-- Campo de Contraseña -->
                     <div class="mb-3">
                         <label for="password" class="form-label">Contraseña</label>
-                        <input type="password" class="form-control" id="password" placeholder="Contraseña" required>
+                        <input name="password" type="password" class="form-control" id="password" placeholder="Contraseña" required>
                     </div>
 
                     <!-- Botón de Iniciar Sesión -->
@@ -46,7 +52,7 @@
             </div>
         </div>
     </div>
-
+    </form>
 </body>
 
 </html>
