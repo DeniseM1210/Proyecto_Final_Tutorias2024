@@ -29,9 +29,9 @@
                             if(isset($_SESSION['nc'])){
                                 echo $_SESSION['nc'];
                             }?>" >
-                        <div style="color:red;"> 
+                            <div style="color:red;"> 
                             <?php  if(isset($_SESSION['err_nc'])){
-                                        echo "Solo numeros enteros";
+                                        echo "Solo numeros";
                                     } ?>
                         </div>
                     </div>
@@ -106,33 +106,31 @@
                 </div>
                 <div class="form-row">
                 <label for="inputZip">Fecha de Nacimiento</label>
-                <div class="form-group col-md-1">
-                        <select class="form-control" name="" id="">
-                            <option value="">1</option>
-                        </select>
+                <div class="form-group col-mid-6">
+                <input class="form-control" type="date" name="caja_fecha" id="" value="<?php 
+                            if(isset($_SESSION['fecha'])){
+                                echo $_SESSION['fecha'];
+                            }?>" >
+                            <div style="color:red;"> 
+                            <?php  if(isset($_SESSION['err_fecha'])){
+                                        echo "fecha vacia";
+                                    } ?>
+                        </div>
                 </div>
-                <div class="form-group col-md-2">
-                        <select class="form-control" name="" id="">
-                            <option value="">Enero</option>
-                        </select>
-                </div>
-                <div class="form-group col-md-2">
-                        <select class="form-control" name="" id="">
-                            <option value="">1980</option>
-                        </select>
-                </div>
+                
+                
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
                     <label for="inputEmail4">Numero de Telefono</label>
-                        <input type="tel" class="form-control" id="caja_nc" name="caja_nc" placeholder="# de Telefono"
+                        <input type="tel" class="form-control" id="caja_tel" name="caja_tel" placeholder="# de Telefono"
                         value="<?php 
-                            if(isset($_SESSION['nc'])){
-                                echo $_SESSION['nc'];
+                            if(isset($_SESSION['tel'])){
+                                echo $_SESSION['tel'];
                             }?>" >
                         <div style="color:red;"> 
-                            <?php  if(isset($_SESSION['err_nc'])){
-                                        echo "Solo numeros enteros";
+                            <?php  if(isset($_SESSION['err_tel'])){
+                                        echo "Solo numeros";
                                     } ?>
                         </div>
                     </div>
@@ -157,15 +155,17 @@
     unset($_SESSION['nombre']);
     unset($_SESSION['pAp']);
     unset($_SESSION['sAp']);
-    unset($_SESSION['edad']);
+    unset($_SESSION['fecha']);
     unset($_SESSION['semestre']);
     unset($_SESSION['carrera']);
+    unset($_SESSION['tel']);
 
     unset($_SESSION['err_nc']);
     unset($_SESSION['err_nombre']);
     unset($_SESSION['err_pAp']);
     unset($_SESSION['err_sAp']);
-    unset($_SESSION['err_edad']);
+    unset($_SESSION['err_fecha']);
     unset($_SESSION['err_semestre']);
     unset($_SESSION['err_carrera']);
+    unset($_SESSION['err_tel']);
 ?>

@@ -55,9 +55,10 @@
                 <th> Nombre </th>
                 <th> Primer Ap </th>
                 <th> Segundo Ap </th>
-                <th> Edad </th>
                 <th> Semestre </th>
                 <th> Carrera </th>
+                <th> Fecha de Nacimiento </th>
+                <th> # de Telefono </th>
                 <th > Acciones </th>
             </tr>
             </thead> <tbody>';
@@ -71,18 +72,19 @@
             <td>".$fila['Nombre']."</td>
             <td>".$fila['Primer_Ap']."</td>
             <td>".$fila['Segundo_Ap']."</td>
-            <td>".$fila['Edad']."</td>
             <td>".$fila['Semestre']."</td>
             <td>".$fila['Carrera']."</td>
+            <td>".$fila['Fecha_Nacimiento']."</td>
+            <td>".$fila['Num_Telefono']."</td>
             <td> 
             <a class='btn btn-primary' href='card_mostrar.php?nc=%s&nombre=%s&primerAp=%s&segundoAp=%s&edad=%d&semestre=%d&carrera=%s'> 
                 <i class='bi bi-eye'></i>
-            </a>",$fila['Num_Control'],$fila['Nombre'],$fila['Primer_Ap'],$fila['Segundo_Ap'],$fila['Edad'],$fila['Semestre'],$fila['Carrera']);
+            </a>",$fila['Num_Control'],$fila['Nombre'],$fila['Primer_Ap'],$fila['Segundo_Ap'],$fila['Semestre'],$fila['Carrera'],$fila['Fecha_Nacimiento'],$fila['Num_Telefono']);
 
             printf("
             <a  class='btn btn-info' href='formulario_editar.php?nc=%s&nombre=%s&primerAp=%s&segundoAp=%s&edad=%d&semestre=%d&carrera=%s'>
                 <i class='bi bi-pencil-square'></i>
-            </a>",$fila['Num_Control'],$fila['Nombre'],$fila['Primer_Ap'],$fila['Segundo_Ap'],$fila['Edad'],$fila['Semestre'],$fila['Carrera']);
+            </a>",$fila['Num_Control'],$fila['Nombre'],$fila['Primer_Ap'],$fila['Segundo_Ap'],$fila['Semestre'],$fila['Carrera'],$fila['Fecha_Nacimiento'],$fila['Num_Telefono']);
 
             printf("
             <a class= 'btn btn-danger' href='../../backend/controllers/procesar_bajas.php?nc=%s'> 

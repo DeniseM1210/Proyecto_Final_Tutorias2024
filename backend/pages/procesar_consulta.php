@@ -36,11 +36,11 @@
     }else if($filtro == 4){
         $datos = $alumnoDAO->mostrarAlumnosFiltro("SELECT * FROM Alumnos WHERE Segundo_Ap LIKE '$busqueda%'");
     }else if($filtro == 5){
-        $datos = $alumnoDAO->mostrarAlumnosFiltro("SELECT * FROM Alumnos WHERE Edad LIKE '$busqueda%'");
-    }else if($filtro == 6){
         $datos = $alumnoDAO->mostrarAlumnosFiltro("SELECT * FROM Alumnos WHERE Semestre LIKE '$busqueda%'");
-    }else if($filtro == 7){
+    }else if($filtro == 6){
         $datos = $alumnoDAO->mostrarAlumnosFiltro("SELECT * FROM Alumnos WHERE Carrera LIKE '$busqueda%'");
+    }else if($filtro == 7){
+        $datos = $alumnoDAO->mostrarAlumnosFiltro("SELECT * FROM Alumnos WHERE Num_Telefono LIKE '$busqueda%'");
     }else{
         $datos = $alumnoDAO->mostrarAlumnos("x");
     }

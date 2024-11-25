@@ -18,7 +18,7 @@
 
             <div class="row justify-content-end">
                 <div class="col-2">
-                <a href="formulario_altas.php" class="btn btn-success">Agregar</a>
+                <a href="formulario_altas_alumnos.php" class="btn btn-success">Agregar</a>
                 <label > ‎ ‎ ‎ ‎ ‎ ‎   
                 ‎   Filtro: </label>
                 
@@ -31,9 +31,9 @@
                     <option value="2">Nombre</option>
                     <option value="3">Primer Apellido</option>
                     <option value="4">Segundo Apellido</option>
-                    <option value="5">Edad</option>
-                    <option value="6">Semestre</option>
-                    <option value="7">Carrera</option>
+                    <option value="5">Semestre</option>
+                    <option value="6">Carrera</option>
+                    <option value="7">Telefono</option>
                 </select>
             </div>
             
