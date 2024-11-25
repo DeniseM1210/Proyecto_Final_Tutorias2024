@@ -33,14 +33,10 @@
             <ul class="navbar-nav mr-auto">
 
                 <li class="nav-item">
-                    <a style="color: white;" class="nav-link" aria-current="page" href="./formulario_altas.php">Agregar </a>
-                </li>
-
-                <li class="nav-item">
-                    <a style="color: white;" class="nav-link" href="./consultas_alumnos.php">Eliminar/Modificar</a>
+                    <a style="color: white;" class="nav-link" aria-current="page" href="gestion_alumnos.php">Alumnos </a>
                 </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0" action="../controllers/cerrar_sesion.php" method="POST">
+            <form class="form-inline my-2 my-lg-0" action="../../controllers/cerrar_sesion.php" method="POST">
             <!--<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> -->
                 <h3 style="color: white;">Bienvenido <?php 
                     

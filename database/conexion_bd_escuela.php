@@ -1,11 +1,11 @@
 <?php
-class ConexionBDUsuarios{
+class ConexionBDEscuela{
     private $conexion;
     //== LOCAL ==
     private $host = "localhost:3306";
     private $usuario = "Cesar1xd1";
     private $password = "1234";
-    private $bd = "usuarios_bd_X";
+    private $bd = "bd_escuela_web_2024";
     
 
     public function __construct(){
