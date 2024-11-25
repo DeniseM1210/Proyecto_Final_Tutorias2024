@@ -27,7 +27,7 @@ if($conexion){
         $_SESSION['tipo_u'] = $tipo;
         if($tipo == "alumno"){
             header('location: ../pages/menu_principal_A.php');
-        }else if($tipo == "tutor"){
+        }else{
             header('location: ../pages/menu_principal_T.php');
         }
         
