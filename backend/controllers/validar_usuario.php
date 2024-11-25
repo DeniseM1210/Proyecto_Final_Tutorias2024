@@ -6,7 +6,7 @@ $tipo = $_POST['tipo'];
 
 //Verificacion de User and Password en BD
 
-include_once('../../database/conexion_bd_usuarios.php');
+include_once('../../database/conexion_bd.php');
 
 $con = new ConexionBDUsuarios();
 $conexion = $con->getConexion();

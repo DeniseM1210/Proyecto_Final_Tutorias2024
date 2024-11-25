@@ -1,5 +1,5 @@
 <?php
-include_once('../../database/conexion_bd_escuela.php');
+include_once('../../database/conexion_bd.php');
     class AlumnoDAO{
         private $conexion;
 
@@ -10,30 +10,29 @@ include_once('../../database/conexion_bd_escuela.php');
         // ---- metodos abcc ----
 
         //Altas
-        public function agregarAlumno($nc,$nombre,$primerAp,$segundoAp,$edad,$semestre,$carrera){
-            $sql = "INSERT INTO Alumnos VALUES('$nc', '$nombre', '$primerAp', '$segundoAp', $edad, $semestre, '$carrera')";
+        public function agregarAlumno($nc,$nombre,$primerAp,$segundoAp,$semestre,$carrera,$fecha,$numTel){
+            $sql = "INSERT INTO alumnos VALUES('$nc', '$nombre', '$primerAp', '$segundoAp', $semestre, '$carrera','$fecha','$numTel')";
             $res = mysqli_query($this->conexion->getConexion(), $sql);
             return $res;
         }
 
         //Bajas
         public function eliminarAlumno($nc){
-            $sql = "DELETE FROM Alumnos WHERE Num_Control = '$nc'";
+            $sql = "DELETE FROM alumnos WHERE Num_Control = '$nc'";
             $res = mysqli_query($this->conexion->getConexion(), $sql);
             return $res;
         }
 
         //Cambios
-        public function editarAlumno($nc,$nombre,$pA,$sA,$edad,$semestre,$carrera){
-            $sql = "UPDATE Alumnos SET Nombre = '$nombre', Primer_Ap = '$pA', Segundo_Ap = '$sA',
-            Edad = $edad, Semestre = $semestre, Carrera = '$carrera' WHERE Num_Control = '$nc';";
+        public function editarAlumno($nc,$nombre,$pA,$sA,$semestre,$carrera,$fecha,$numTel){
+            $sql = "UPDATE alumnos SET Nombre = '$nombre', Primer_Ap = '$pA', Segundo_Ap = '$sA', Semestre = $semestre, Carrera = '$carrera', 'Fecha_Nacimiento' = '$fecha', 'Num_Telefono' = '$numTel' WHERE Num_Control = '$nc';";
             $res = mysqli_query($this->conexion->getConexion(), $sql);
             return $res;
         }
 
         //Consultas
         public function mostrarAlumnos($filtro){
-            $sql = "SELECT * FROM Alumnos";
+            $sql = "SELECT * FROM alumnos";
             $res = mysqli_query($this->conexion->getConexion(), $sql);
             return $res;
         }

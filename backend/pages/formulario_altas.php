@@ -20,9 +20,9 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="../controllers/procesar_altas.php" method="POST">
+            <form action="../controllers/procesar_altas_alumnos.php" method="POST">
                 <div class="form-row">
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-5">
                         <label for="inputEmail4">Numero de Control</label>
                         <input type="text" class="form-control" id="caja_nc" name="caja_nc" placeholder="Numero de Control"
                         value="<?php 
@@ -35,7 +35,7 @@
                                     } ?>
                         </div>
                     </div>
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-5">
                         <label for="inputPassword4">Nombre</label>
                         <input type="text" class="form-control" id="caja_nombre" name="caja_nombre" placeholder="Nombre"
                         value="<?php 
@@ -49,7 +49,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="form-group">
+                <div class="form-row">
+                <div class="form-group col-md-5">
                     <label for="inputAddress">Primer Apellido</label>
                     <input type="text" class="form-control" id="caja_primerAp" name="caja_primerAp" placeholder="Apellido Paterno" value="<?php 
                             if(isset($_SESSION['pAp'])){
@@ -61,7 +62,7 @@
                                     } ?>
                         </div>
                 </div>
-                <div class="form-group">
+                <div class="form-group col-md-5">
                     <label for="inputAddress2">Segundo Apellido</label>
                     <input type="text" class="form-control" id="caja_segundoAp" name="caja_segundoAp" placeholder="Apellido Materno" value="<?php 
                             if(isset($_SESSION['sAp'])){
@@ -73,19 +74,10 @@
                                     } ?>
                         </div>
                 </div>
+                </div>
+                
                 <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="inputCity">Edad</label>
-                        <input type="number" class="form-control" id="caja_edad" name="caja_edad" placeholder="Edad" value="<?php 
-                            if(isset($_SESSION['edad'])){
-                                echo $_SESSION['edad'];
-                            }?>">
-                            <div style="color:red;"> 
-                            <?php  if(isset($_SESSION['err_edad'])){
-                                        echo "Solo numeros enteros";
-                                    } ?>
-                        </div>
-                    </div>
+                    
                     <div class="form-group col-md-4">
                         <label for="inputState">Semestre</label>
                         <input type="number" class="form-control" id="caja_semestre" name="caja_semestre" placeholder="Semestre" value="<?php 
@@ -111,6 +103,40 @@
                                     } ?>
                         </div>
                     </div>
+                </div>
+                <div class="form-row">
+                <label for="inputZip">Fecha de Nacimiento</label>
+                <div class="form-group col-md-1">
+                        <select class="form-control" name="" id="">
+                            <option value="">1</option>
+                        </select>
+                </div>
+                <div class="form-group col-md-2">
+                        <select class="form-control" name="" id="">
+                            <option value="">Enero</option>
+                        </select>
+                </div>
+                <div class="form-group col-md-2">
+                        <select class="form-control" name="" id="">
+                            <option value="">1980</option>
+                        </select>
+                </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                    <label for="inputEmail4">Numero de Telefono</label>
+                        <input type="tel" class="form-control" id="caja_nc" name="caja_nc" placeholder="# de Telefono"
+                        value="<?php 
+                            if(isset($_SESSION['nc'])){
+                                echo $_SESSION['nc'];
+                            }?>" >
+                        <div style="color:red;"> 
+                            <?php  if(isset($_SESSION['err_nc'])){
+                                        echo "Solo numeros enteros";
+                                    } ?>
+                        </div>
+                    </div>
+                
                 </div>
                 <button type="submit" class="btn btn-primary">Dar de Alta</button>
     </div>
