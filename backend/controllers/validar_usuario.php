@@ -8,7 +8,7 @@ $tipo = $_POST['tipo'];
 
 include_once('../../database/conexion_bd.php');
 
-$con = new ConexionBDUsuarios();
+$con = new ConexionBDEscuela();
 $conexion = $con->getConexion();
 
 if($conexion){
