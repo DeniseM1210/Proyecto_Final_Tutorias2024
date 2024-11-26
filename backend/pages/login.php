@@ -44,7 +44,7 @@
                     <button type="submit" class="btn btn-primary w-100">Iniciar Sesión</button>
 
                     <div class="d-flex gap-2 gap-md-4 flex-column flex-md-row justify-content-md-end">
-                        <a href="">Registrarse</a>
+                        <a href="./formulario_registro.php">Registrarse</a>
                         <a href="">Olvidé mi contraseña</a>
                     </div>
                 </form>
