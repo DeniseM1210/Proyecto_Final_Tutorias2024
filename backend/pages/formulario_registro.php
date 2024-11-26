@@ -11,7 +11,7 @@
     <?php
     require_once('menu_principal.php')
     ?>
-    <form action="../controllers/validar_usuario.php" method="POST">
+    <form action="../controllers/procesar_usuarios.php" method="POST">
         <div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
             <div class="card" style="width: 100%; max-width: 400px;">
                 <div class="card-body">

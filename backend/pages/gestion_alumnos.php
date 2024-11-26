@@ -87,7 +87,7 @@
             </a>",$fila['Num_Control'],$fila['Nombre'],$fila['Primer_Ap'],$fila['Segundo_Ap'],$fila['Semestre'],$fila['Carrera'],$fila['Fecha_Nacimiento'],$fila['Num_Telefono']);
 
             printf("
-            <a class= 'btn btn-danger' href='../../backend/controllers/procesar_bajas.php?nc=%s'> 
+            <a class= 'btn btn-danger' href='../../backend/controllers/procesar_bajas_alumnos.php?nc=%s'> 
                 <i class='bi bi-trash-fill'></i>
             </a>
 
