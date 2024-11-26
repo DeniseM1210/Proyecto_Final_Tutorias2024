@@ -19,7 +19,7 @@ if($conexion){
     $sql = "SELECT * FROM usuarios WHERE usuario = '$u_c' AND password = '$p_c' AND tipo = '$tipo';";
     $res = mysqli_query($conexion,$sql);
     if(mysqli_num_rows($res)==1){
-        echo "usuario encontrado";
+        //echo "usuario encontrado";
         session_start();
         
         $_SESSION['valida']= true;
@@ -33,7 +33,7 @@ if($conexion){
         
         
     }else{
-        echo "No encontado";
+        echo "No encontrado";
     }
 }else{
     echo "Error en la conexion";
