@@ -10,7 +10,7 @@ include_once('../../database/conexion_bd.php');
 
 $con = new ConexionBD();
 $conexion = $con->getConexion();
-
+session_start();
 if($conexion){
     //$sql = "SELECT * FROM usuarios WHERE Nombre_Usuario = '$usuario' AND Password = '$password';";
     $u_c = sha1($usuario);
@@ -20,7 +20,6 @@ if($conexion){
     $res = mysqli_query($conexion,$sql);
     if(mysqli_num_rows($res)==1){
         //echo "usuario encontrado";
-        session_start();
         
         $_SESSION['valida']= true;
         $_SESSION['usuario'] = $usuario;
