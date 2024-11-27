@@ -14,20 +14,22 @@
     require_once('menu_principal_T.php');
     ?>
     <div class="container">
-        <h2>Agregar Alumno</h1>
-            <div style="display:<?php echo isset($_SESSION['insercion_correcta']) ?'content':'none' ;?>;" class="alert alert-success alert-dismissible fade show" role="alert">
-                Registro agregado correctamente
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
+        <h2>Editar Alumno</h1>
             <form action="../controllers/procesar_cambios_alumnos.php" method="POST">
                 <div class="form-row">
                     <div class="form-group col-md-5">
                         <label for="inputEmail4">Numero de Control</label>
                         <input type="text" class="form-control" id="caja_nc" name="caja_nc" placeholder="Numero de Control"
                         value="<?php 
-                        echo $_GET["nc"];
+                        if(isset($_SESSION['nc'])){
+                            echo $_SESSION['nc'];
+                        }else{
+                            if(isset($_GET["nc"])){
+                                echo $_GET["nc"];
+                            }else{
+                                header('Location: gestion_alumnos.php');
+                            }
+                        }
                             ?>" readonly>
                             <div style="color:red;"> 
                             <?php  if(isset($_SESSION['err_nc'])){
@@ -39,7 +41,13 @@
                         <label for="inputPassword4">Nombre</label>
                         <input type="text" class="form-control" id="caja_nombre" name="caja_nombre" placeholder="Nombre"
                         value="<?php 
-                            echo $_GET['nombre'];?>">
+                            if(isset($_SESSION['nombre'])){
+                                echo $_SESSION['nombre'];
+                            }else{
+                                if(isset($_GET["nombre"])){
+                                    echo $_GET["nombre"];
+                                } 
+                            };?>">
                             <div style="color:red;"> 
                             <?php  if(isset($_SESSION['err_nombre'])){
                                         echo "Solo letras";
@@ -51,7 +59,13 @@
                 <div class="form-group col-md-5">
                     <label for="inputAddress">Primer Apellido</label>
                     <input type="text" class="form-control" id="caja_primerAp" name="caja_primerAp" placeholder="Apellido Paterno" value="<?php 
-                            echo $_GET['primerAp'];?>">
+                            if(isset($_SESSION['pAp'])){
+                                echo $_SESSION['pAp'];
+                            }else{
+                                if(isset($_GET["primerAp"])){
+                                    echo $_GET["primerAp"];
+                                } 
+                            };?>">
                             <div style="color:red;"> 
                             <?php  if(isset($_SESSION['err_pAp'])){
                                         echo "Solo letras";
@@ -61,7 +75,13 @@
                 <div class="form-group col-md-5">
                     <label for="inputAddress2">Segundo Apellido</label>
                     <input type="text" class="form-control" id="caja_segundoAp" name="caja_segundoAp" placeholder="Apellido Materno" value="<?php 
-                            echo $_GET['segundoAp'];?>">
+                            if(isset($_SESSION['sAp'])){
+                                echo $_SESSION['sAp'];
+                            }else{
+                                if(isset($_GET["segundoAp"])){
+                                    echo $_GET["segundoAp"];
+                                } 
+                            };?>">
                             <div style="color:red;"> 
                             <?php  if(isset($_SESSION['err_sAp'])){
                                         echo "Solo letras";
@@ -75,7 +95,13 @@
                     <div class="form-group col-md-4">
                         <label for="inputState">Semestre</label>
                         <input type="number" class="form-control" id="caja_semestre" name="caja_semestre" placeholder="Semestre" value="<?php 
-                            echo $_GET['semestre'];?>">
+                            if(isset($_SESSION['semestre'])){
+                                echo $_SESSION['semestre'];
+                            }else{
+                                if(isset($_GET["semestre"])){
+                                    echo $_GET["semestre"];
+                                } 
+                            };?>">
                             <div style="color:red;"> 
                             <?php  if(isset($_SESSION['err_semestre'])){
                                         echo "Solo numeros enteros";
@@ -86,7 +112,13 @@
                     <div class="form-group col-md-4">
                         <label for="inputZip">Carrera</label>
                         <input type="text" class="form-control" id="caja_carrera" name="caja_carrera" placeholder="Carrera" value="<?php 
-                            echo $_GET['carrera'];?>">
+                            if(isset($_SESSION['carrera'])){
+                                echo $_SESSION['carrera'];
+                            }else{
+                                if(isset($_GET["carrera"])){
+                                    echo $_GET["carrera"];
+                                } 
+                            };?>">
                             <div style="color:red;"> 
                             <?php  if(isset($_SESSION['err_carrera'])){
                                         echo "Solo letras";
@@ -98,7 +130,13 @@
                 <label for="inputZip">Fecha de Nacimiento</label>
                 <div class="form-group col-mid-6">
                 <input class="form-control" type="date" name="caja_fecha" id="" 
-                value="<?php echo $_GET['fecha'];?>">
+                value="<?php if(isset($_SESSION['fecha'])){
+                                echo $_SESSION['fecha'];
+                            }else{
+                                if(isset($_GET["fecha"])){
+                                    echo $_GET["fecha"];
+                                } 
+                            };?>">
                             <div style="color:red;"> 
                             <?php  if(isset($_SESSION['err_fecha'])){
                                         echo "fecha vacia";
@@ -113,7 +151,13 @@
                     <label for="inputEmail4">Numero de Telefono</label>
                         <input type="tel" class="form-control" id="caja_tel" name="caja_tel" placeholder="# de Telefono"
                         value="<?php 
-                            echo $_GET['tel'];?>" >
+                            if(isset($_SESSION['tel'])){
+                                echo $_SESSION['tel'];
+                            }else{
+                                if(isset($_GET["tel"])){
+                                    echo $_GET["tel"];
+                                } 
+                            };?>" >
                         <div style="color:red;"> 
                             <?php  if(isset($_SESSION['err_tel'])){
                                         echo "Solo numeros";
@@ -122,7 +166,7 @@
                     </div>
                 
                 </div>
-                <button type="submit" class="btn btn-primary">Dar de Alta</button>
+                <button type="submit" class="btn btn-primary">Guardar</button>
     </div>
 
 
@@ -134,7 +178,7 @@
 </html>
 
 <?php
-    unset($_SESSION['insercion_correcta']);
+    unset($_SESSION['edicion_correcta']);
     unset($_SESSION['error_validacion']);
 
     unset($_SESSION['nc']);
