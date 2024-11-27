@@ -5,7 +5,7 @@
         private $conexion;
 
         public function __CONSTRUCT(){
-            $this->conexion = new ConexionBDEscuela();
+            $this->conexion = new ConexionBD();
         }
 
         public function agregarUsuario($tipo, $usu, $pass){

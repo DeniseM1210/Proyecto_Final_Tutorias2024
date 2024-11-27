@@ -75,14 +75,14 @@
             <td>".$fila['Semestre']."</td>
             <td>".$fila['Carrera']."</td>
             <td> 
-            <a class='btn btn-primary' href='card_mostrar.php?nc=%s&nombre=%s&primerAp=%s&segundoAp=%s&edad=%d&semestre=%d&carrera=%s'> 
+            <a class='btn btn-primary' href='card_mostrar.php?nc=%s&nombre=%s&primerAp=%s&segundoAp=%s&semestre=%d&carrera=%s&fecha=%s&tel=%s'> 
                 <i class='bi bi-eye'></i>
-            </a>",$fila['Num_Control'],$fila['Nombre'],$fila['Primer_Ap'],$fila['Segundo_Ap'],$fila['Edad'],$fila['Semestre'],$fila['Carrera']);
+            </a>",$fila['Num_Control'],$fila['Nombre'],$fila['Primer_Ap'],$fila['Segundo_Ap'],$fila['Semestre'],$fila['Carrera'],$fila['Fecha_Nacimiento'],$fila['Num_Telefono']);
 
             printf("
-            <a  class='btn btn-info' href='formulario_editar.php?nc=%s&nombre=%s&primerAp=%s&segundoAp=%s&edad=%d&semestre=%d&carrera=%s'>
+            <a  class='btn btn-info' href='formulario_editar_alumnos.php?nc=%s&nombre=%s&primerAp=%s&segundoAp=%s&semestre=%d&carrera=%s&fecha=%s&tel=%s'>
                 <i class='bi bi-pencil-square'></i>
-            </a>",$fila['Num_Control'],$fila['Nombre'],$fila['Primer_Ap'],$fila['Segundo_Ap'],$fila['Edad'],$fila['Semestre'],$fila['Carrera']);
+            </a>",$fila['Num_Control'],$fila['Nombre'],$fila['Primer_Ap'],$fila['Segundo_Ap'],$fila['Semestre'],$fila['Carrera'],$fila['Fecha_Nacimiento'],$fila['Num_Telefono']);
 
             printf("
             <a class= 'btn btn-danger' href='../../backend/controllers/procesar_bajas.php?nc=%s'> 

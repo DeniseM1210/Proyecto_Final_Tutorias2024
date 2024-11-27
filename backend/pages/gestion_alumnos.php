@@ -82,7 +82,7 @@
             </a>",$fila['Num_Control'],$fila['Nombre'],$fila['Primer_Ap'],$fila['Segundo_Ap'],$fila['Semestre'],$fila['Carrera'],$fila['Fecha_Nacimiento'],$fila['Num_Telefono']);
 
             printf("
-            <a  class='btn btn-info' href='formulario_editar.php?nc=%s&nombre=%s&primerAp=%s&segundoAp=%s&edad=%d&semestre=%d&carrera=%s'>
+            <a  class='btn btn-info' href='formulario_cambios_alumnos.php?nc=%s&nombre=%s&primerAp=%s&segundoAp=%s&semestre=%d&carrera=%s&fecha=%s&tel=%s'>
                 <i class='bi bi-pencil-square'></i>
             </a>",$fila['Num_Control'],$fila['Nombre'],$fila['Primer_Ap'],$fila['Segundo_Ap'],$fila['Semestre'],$fila['Carrera'],$fila['Fecha_Nacimiento'],$fila['Num_Telefono']);
 

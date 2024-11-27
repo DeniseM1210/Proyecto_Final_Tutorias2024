@@ -4,7 +4,7 @@ include_once('../../database/conexion_bd.php');
         private $conexion;
 
         public function __CONSTRUCT(){
-            $this->conexion = new ConexionBDEscuela(); 
+            $this->conexion = new ConexionBD(); 
         }
 
         // ---- metodos abcc ----
@@ -25,7 +25,7 @@ include_once('../../database/conexion_bd.php');
 
         //Cambios
         public function editarAlumno($nc,$nombre,$pA,$sA,$semestre,$carrera,$fecha,$numTel){
-            $sql = "UPDATE alumnos SET Nombre = '$nombre', Primer_Ap = '$pA', Segundo_Ap = '$sA', Semestre = $semestre, Carrera = '$carrera', 'Fecha_Nacimiento' = '$fecha', 'Num_Telefono' = '$numTel' WHERE Num_Control = '$nc';";
+            $sql = "UPDATE alumnos SET Nombre = '$nombre', Primer_Ap = '$pA', Segundo_Ap = '$sA', Semestre = $semestre, Carrera = '$carrera', Fecha_Nacimiento = '$fecha', Num_Telefono = '$numTel' WHERE Num_Control = '$nc';";
             $res = mysqli_query($this->conexion->getConexion(), $sql);
             return $res;
         }
