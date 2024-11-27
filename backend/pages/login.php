@@ -45,7 +45,7 @@
 
                     <div class="d-flex gap-2 gap-md-4 flex-column flex-md-row justify-content-md-end">
                         <a href="./formulario_registro.php">Registrarse</a>
-                        <a href="">Olvidé mi contraseña</a>
+                        <a href="./correo_verificacion.php">Olvidé mi contraseña</a>
                     </div>
                 </form>
             </div>
