@@ -20,6 +20,12 @@
             return $res;
         }
 
+        public function buscarUsuarioU($user){
+            $sql = "SELECT * FROM usuarios WHERE usuario = sha1('$user');";
+            $res = mysqli_query($this->conexion->getConexion(), $sql);
+            return $res;
+        }
+
         public function cambiarContraseña($user,$pass){
             $sql = "UPDATE usuarios SET password = sha1('$pass') WHERE usuario = '$user';";
             $res = mysqli_query($this->conexion->getConexion(), $sql);

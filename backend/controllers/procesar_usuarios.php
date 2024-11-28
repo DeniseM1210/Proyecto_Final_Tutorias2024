@@ -5,11 +5,11 @@
     $usuario = $_POST['usuario'];
     $pass = $_POST['password'];
     $correo = $_POST['correo'];
-
     //validacion
     $datos_correctos = false;
     $dccorreo = false;
     session_start();
+
 
     if(isset($tipo) && !empty($tipo) && isset($usuario) && !empty($usuario) && isset($pass) && !empty($pass)){
         $datos_correctos = true;
@@ -28,8 +28,15 @@
         $datos_correctos = true;
     }
 
+    $usuarioDAO = new UsuarioDAO();
+    $consulta = $usuarioDAO->buscarUsuarioU($usuario);
+    echo mysqli_num_rows($consulta);
+    if(mysqli_num_rows($consulta)>=1){    
+        $datos_correctos = false;
+        $_SESSION['usuario_existe'] = true;
+    }
+
     if($datos_correctos == true){
-        $usuarioDAO = new UsuarioDAO();
         $res = $usuarioDAO->agregarUsuario($tipo, $usuario, $pass,$correo);
         if($res == 1){
             header('location: ../pages/login.php');
@@ -37,9 +44,10 @@
     }else{
         $_SESSION['error_validacion'] = true;
         $_SESSION['correo'] = $_POST['correo'];
-        $_SESSION['usuario'] = $_POST['usuario'];
+        if(isset($_SESSION['usuario_existe'])){
+            $_SESSION['usuario'] = $_POST['usuario'];
+        }
         $_SESSION['tipo'] = $_POST['tipo'];
-
         header('Location: ../pages/formulario_registro.php');
     }
 

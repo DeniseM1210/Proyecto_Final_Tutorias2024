@@ -37,6 +37,13 @@
                                 if(isset($_SESSION['usuario'])){
                                     echo $_SESSION['usuario'];
                                 } ?>" >
+                                <div style="color:red;">
+                                    <?php
+                                        if(isset($_SESSION['usuario_existe'])){
+                                            echo "Exte usuario ya existe";
+                                        } ?>
+
+                                </div>
                         </div>
 
                         <div class="mb-3">
@@ -80,5 +87,6 @@
     unset($_SESSION['tipo']);
     unset($_SESSION['usuario']);
     unset($_SESSION['err_correo']);
+    unset($_SESSION['usuario_existe']);
 
 ?>
