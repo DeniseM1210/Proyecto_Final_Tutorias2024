@@ -10,7 +10,8 @@
 
 <body>
     <?php
-    require_once('menu_principal.php')
+    require_once('menu_principal.php');
+    session_start();
     ?>
     <form action="../controllers/procesar_usuarios.php" method="POST">
         <div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
@@ -22,17 +23,20 @@
                         <div class="mb-3">
                             <label class="form-label">Tipo</label>
                             <select name="tipo" class="form-select" aria-label="Default select example">
-                                <option value="alumno">Alumno</option>
-                                <option value="tutor">Tutor</option>
-                                <option value="jefe">Jefe de Division</option>
-                                <option value="psicologo">Prsicologo</option>
+                                <option value="alumno" <?= (isset($_SESSION['tipo']) && $_SESSION['tipo'] === "alumno" )? 'selected' : '' ?>>Alumno</option>
+                                <option value="tutor" <?= (isset($_SESSION['tipo']) && $_SESSION['tipo'] === "tutor" )? 'selected' : '' ?>  >Tutor</option>
+                                <option value="jefe" <?= (isset($_SESSION['tipo']) &&$_SESSION['tipo'] === "jefe" )? 'selected' : '' ?> >Jefe de Division</option>
+                                <option value="psicologo" <?= (isset($_SESSION['tipo']) && $_SESSION['tipo'] === "psicologo" )? 'selected' : '' ?> >Prsicologo</option>
                             </select>
                         </div>
 
                         <div class="mb-3">
                             <label for="username" class="form-label">Usuario</label>
                             <input type="text" name="usuario" class="form-control" id="usuario" placeholder="Usuario"
-                                required>
+                                required value="<?php
+                                if(isset($_SESSION['usuario'])){
+                                    echo $_SESSION['usuario'];
+                                } ?>" >
                         </div>
 
                         <div class="mb-3">
@@ -73,6 +77,8 @@
     unset($_SESSION['error_validacion']);
 
     unset($_SESSION['correo']);
+    unset($_SESSION['tipo']);
+    unset($_SESSION['usuario']);
     unset($_SESSION['err_correo']);
 
 ?>

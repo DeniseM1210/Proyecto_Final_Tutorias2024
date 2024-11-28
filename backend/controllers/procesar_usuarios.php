@@ -37,6 +37,9 @@
     }else{
         $_SESSION['error_validacion'] = true;
         $_SESSION['correo'] = $_POST['correo'];
+        $_SESSION['usuario'] = $_POST['usuario'];
+        $_SESSION['tipo'] = $_POST['tipo'];
+
         header('Location: ../pages/formulario_registro.php');
     }
 
