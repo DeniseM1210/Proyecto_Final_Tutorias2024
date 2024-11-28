@@ -35,6 +35,12 @@
                                 required>
                         </div>
 
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Correo</label>
+                            <input type="email" name="correo" class="form-control" id="correo" placeholder="Correo"
+                                required>
+                        </div>
+
                         <!-- Campo de Contraseña -->
                         <div class="mb-3">
                             <label for="password" class="form-label">Contraseña</label>
