@@ -32,7 +32,7 @@ include_once('../../database/conexion_bd.php');
 
         //Consultas
         public function mostrarAlumnos($filtro){
-            $sql = "SELECT * FROM alumnos";
+            $sql = "CALL obtenerAlumnos()";
             $res = mysqli_query($this->conexion->getConexion(), $sql);
             return $res;
         }

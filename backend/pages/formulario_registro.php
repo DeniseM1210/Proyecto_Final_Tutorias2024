@@ -38,7 +38,17 @@
                         <div class="mb-3">
                             <label for="username" class="form-label">Correo</label>
                             <input type="email" name="correo" class="form-control" id="correo" placeholder="Correo"
-                                required>
+                                required value="<?php
+                                if(isset($_SESSION['correo'])){
+                                    echo $_SESSION['correo'];
+                                } ?>" >
+                                <div style="color:red;">
+                                    <?php
+                                        if(isset($_SESSION['err_correo'])){
+                                            echo "Unicamente @gmail.com";
+                                        } ?>
+
+                                </div>
                         </div>
 
                         <!-- Campo de Contraseña -->
@@ -58,3 +68,11 @@
 </body>
 
 </html>
+
+<?php
+    unset($_SESSION['error_validacion']);
+
+    unset($_SESSION['correo']);
+    unset($_SESSION['err_correo']);
+
+?>
