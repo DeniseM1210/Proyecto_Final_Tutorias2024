@@ -76,7 +76,7 @@
             <td>".$fila['Semestre']."</td>
             <td>".$fila['Carrera']."</td>
             <td> 
-            <a class='btn btn-primary' href='card_mostrar.php?nc=%s&nombre=%s&primerAp=%s&segundoAp=%s&semestre=%d&carrera=%s&fecha=%s&tel=%s'> 
+            <a class='btn btn-primary' href='detalles.php?nc=%s&nombre=%s&primerAp=%s&segundoAp=%s&semestre=%d&carrera=%s&fecha=%s&tel=%s'> 
                 <i class='bi bi-eye'></i>
             </a>",$fila['Num_Control'],$fila['Nombre'],$fila['Primer_Ap'],$fila['Segundo_Ap'],$fila['Semestre'],$fila['Carrera'],$fila['Fecha_Nacimiento'],$fila['Num_Telefono']);
 
