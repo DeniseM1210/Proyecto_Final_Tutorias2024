@@ -56,7 +56,6 @@
                 <th> Nombre </th>
                 <th> Primer Ap </th>
                 <th> Segundo Ap </th>
-                <th> Edad </th>
                 <th> Semestre </th>
                 <th> Carrera </th>
                 <th > Acciones </th>
@@ -72,7 +71,6 @@
             <td>".$fila['Nombre']."</td>
             <td>".$fila['Primer_Ap']."</td>
             <td>".$fila['Segundo_Ap']."</td>
-            <td>".$fila['Edad']."</td>
             <td>".$fila['Semestre']."</td>
             <td>".$fila['Carrera']."</td>
             <td> 
