@@ -42,6 +42,13 @@ include_once('../../database/conexion_bd.php');
             return $res;
         }
 
+        //Funcion para la edad
+        public function funcionEdad($nc){
+            $sql = "SELECT CalcularEdad(fecha_nacimiento) AS edad FROM alumnos WHERE Num_Control = '$nc'";
+            $res = mysqli_query($this->conexion->getConexion(), $sql);
+            return $res;
+        }
+
 
     }
 ?>
