@@ -59,7 +59,10 @@
                             <li class="list-group-item">
                                 <strong>Edad:</strong>
                                 <?php
-                                    echo $_GET["nombre"];
+                                    $alumnoDAO = new AlumnoDAO();
+                                    $res = $alumnoDAO->funcionEdad($_GET['nc']);
+                                    $datos = mysqli_fetch_assoc($res);
+                                    echo $datos['edad'];
                                 ?>
                             </li>
                             <li class="list-group-item">
