@@ -5,7 +5,7 @@ $password = $_POST['password'];
 $tipo = $_POST['tipo'];
 
 //codigo para el recapthca
-
+session_start();
 $ip = $_SERVER['REMOTE_ADDR'];
 $captcha = $_POST['g-recaptcha-response'];
 $secretkey = "6LcluZAqAAAAAMKuN83bGHIzgi32D3EEI90Is0xs";
@@ -13,7 +13,12 @@ $secretkey = "6LcluZAqAAAAAMKuN83bGHIzgi32D3EEI90Is0xs";
 $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$secretkey&response=$captcha&remoteip=$ip");
 
 $atributos = json_decode($response, TRUE);
-
+echo json_encode($atributos);
+if($atributos['success']==false){
+    $_SESSION['capchat'] = true;
+    header('location: ../pages/login');
+    exit;
+    }
 //Verificacion de User and Password en BD
 
 include_once('../../database/conexion_bd.php');
@@ -21,7 +26,7 @@ include_once('../../database/conexion_bd.php');
 
 $con = new ConexionBD();
 $conexion = $con->getConexion();
-session_start();
+
 if($conexion){
     //$sql = "SELECT * FROM usuarios WHERE Nombre_Usuario = '$usuario' AND Password = '$password';";
     $u_c = sha1($usuario);
@@ -42,7 +47,8 @@ if($conexion){
         }
         
     }else{
-        echo "No encontrado";
+        $_SESSION['valida']= false;
+        header('location: ../pages/login');
     }
 }else{
     echo "Error en la conexion";

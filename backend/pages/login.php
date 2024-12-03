@@ -13,8 +13,22 @@
 <body>
     <?php
     require_once('menu_principal.php');
+    session_start();
     ?>
+    
     <form action="../controllers/validar_usuario.php" method="POST">
+    <div class='container' style="display:<?php if(isset($_SESSION['valida'])){
+        if($_SESSION['valida']==false){
+            echo 'content';
+        }
+    }else{
+        echo 'none';
+    };?>;" class="alert alert-danger alert-dismissible fade show" role="alert">
+                Este usuario no existe
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
     <div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
         <div class="card" style="width: 100%; max-width: 400px;">
             <div class="card-body">
@@ -44,8 +58,13 @@
 
                     <div class="mb-3">
                         <div class="g-recaptcha" data-sitekey="6LcluZAqAAAAANUF7-BLesasasSj4NXKaDvIBeYA"></div>
+                        <div style="color:red;"> 
+                            <?php  if(isset($_SESSION['capchat'])){
+                                        echo "rellena el capchat";
+                                    } ?>
+                        </div>
                     </div>
-
+                    
                     <!-- Botón de Iniciar Sesión -->
                     <button type="submit" class="btn btn-primary w-100">Iniciar Sesión</button>
 
@@ -61,3 +80,7 @@
 </body>
 
 </html>
+<?php
+    unset($_SESSION['capchat']);
+    unset($_SESSION['valida']);
+?>
