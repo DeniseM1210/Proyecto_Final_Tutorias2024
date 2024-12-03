@@ -5,12 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
     
 </head>
 
 <body>
     <?php
-    require_once('menu_principal.php')
+    require_once('menu_principal.php');
     ?>
     <form action="../controllers/validar_usuario.php" method="POST">
     <div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
@@ -38,6 +40,10 @@
                     <div class="mb-3">
                         <label for="password" class="form-label">Contraseña</label>
                         <input name="password" type="password" class="form-control" id="password" placeholder="Contraseña" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <div class="g-recaptcha" data-sitekey="6LcluZAqAAAAANUF7-BLesasasSj4NXKaDvIBeYA"></div>
                     </div>
 
                     <!-- Botón de Iniciar Sesión -->

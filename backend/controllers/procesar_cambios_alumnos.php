@@ -92,10 +92,10 @@
         
         if($res==1){
             $_SESSION['edicion_correcta'] = true;
-            header('Location: ../pages/gestion_alumnos.php');
+            header('Location: ../pages/gestion_alumnos');
         }else{
             $_SESSION['edicion_correcta'] = false;
-            header('Location: ../pages/gestion_alumnos.php');
+            header('Location: ../pages/gestion_alumnos');
         }
         }else{
             $_SESSION['error_validacion'] = true;
@@ -107,6 +107,6 @@
             $_SESSION['semestre'] = $_POST['caja_semestre'];
             $_SESSION['fecha'] = $_POST['caja_fecha'];
             $_SESSION['tel'] = $_POST['caja_tel'];
-            header('Location: ../pages/formulario_cambios_alumnos.php');
+            header('Location: ../pages/formulario_cambios_alumnos');
     }
 ?>

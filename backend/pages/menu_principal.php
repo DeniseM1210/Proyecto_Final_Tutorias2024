@@ -31,7 +31,7 @@
                     </li>
                 </ul>
                 <form class="d-flex">
-                    <a href="./login.php" class="btn btn-outline-light">Iniciar Sesión </a>
+                    <a href="./login" class="btn btn-outline-light">Iniciar Sesión </a>
                 </form>
             </div>
         </div>

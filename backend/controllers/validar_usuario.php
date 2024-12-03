@@ -4,9 +4,20 @@ $usuario = $_POST['usuario'];
 $password = $_POST['password'];
 $tipo = $_POST['tipo'];
 
+//codigo para el recapthca
+
+$ip = $_SERVER['REMOTE_ADDR'];
+$captcha = $_POST['g-recaptcha-response'];
+$secretkey = "6LcluZAqAAAAAMKuN83bGHIzgi32D3EEI90Is0xs";
+
+$response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$secretkey&response=$captcha&remoteip=$ip");
+
+$atributos = json_decode($response, TRUE);
+
 //Verificacion de User and Password en BD
 
 include_once('../../database/conexion_bd.php');
+
 
 $con = new ConexionBD();
 $conexion = $con->getConexion();
@@ -25,11 +36,10 @@ if($conexion){
         $_SESSION['usuario'] = $usuario;
         $_SESSION['tipo_u'] = $tipo;
         if($tipo == "alumno"){
-            header('location: ../pages/menu_principal_A.php');
+            header('location: ../pages/menu_principal_A');
         }else{
-            header('location: ../pages/menu_principal_T.php');
+            header('location: ../pages/menu_principal_T');
         }
-        
         
     }else{
         echo "No encontrado";

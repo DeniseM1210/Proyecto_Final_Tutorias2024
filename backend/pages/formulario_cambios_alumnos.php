@@ -27,7 +27,7 @@
                             if(isset($_GET["nc"])){
                                 echo $_GET["nc"];
                             }else{
-                                header('Location: gestion_alumnos.php');
+                                header('Location: gestion_alumnos');
                             }
                         }
                             ?>" readonly>

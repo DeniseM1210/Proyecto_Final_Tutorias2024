@@ -90,10 +90,10 @@
         
         if($res==1){
             $_SESSION['insercion_correcta'] = true;
-            header('Location: ../pages/formulario_altas_alumnos.php');
+            header('Location: ../pages/formulario_altas_alumnos');
         }else{
             $_SESSION['insercion_correcta'] = false;
-            header('Location: ../pages/formulario_altas_alumnos.php');
+            header('Location: ../pages/formulario_altas_alumnos');
             
         }
         }else{
@@ -106,6 +106,6 @@
             $_SESSION['semestre'] = $_POST['caja_semestre'];
             $_SESSION['fecha'] = $_POST['caja_fecha'];
             $_SESSION['tel'] = $_POST['caja_tel'];
-            header('Location: ../pages/formulario_altas_alumnos.php');
+            header('Location: ../pages/formulario_altas_alumnos');
     }
 ?>

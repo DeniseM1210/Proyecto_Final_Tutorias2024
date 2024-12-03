@@ -46,7 +46,7 @@
     } else {
         session_unset();
         session_destroy();
-        header('Location: ../pages/correo_verificacion.php');
+        header('Location: ../pages/correo_verificacion');
     }
     ?>
     <div class="container">

@@ -23,7 +23,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light ">
         <div class="container-fluid">
-        <a class="navbar-brand" href="menu_principal_T.php"><i style="font-size: 30px; color: white;" class="bi bi-house-fill" height="500"></i></a>
+        <a class="navbar-brand" href="menu_principal_T"><i style="font-size: 30px; color: white;" class="bi bi-house-fill" height="500"></i></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -32,7 +32,7 @@
             <ul class="navbar-nav mr-auto">
 
                 <li class="nav-item">
-                    <a style="color: white;" class="nav-link" aria-current="page" href="gestion_alumnos.php">Alumnos </a>
+                    <a style="color: white;" class="nav-link" aria-current="page" href="gestion_alumnos">Alumnos </a>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0" action="../controllers/cerrar_sesion.php" method="POST">

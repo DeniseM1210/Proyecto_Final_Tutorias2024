@@ -19,7 +19,7 @@
 
             <div class="row justify-content-end">
                 <div class="col-2">
-                <a href="formulario_altas_alumnos.php" class="btn btn-success">Agregar</a>
+                <a href="formulario_altas_alumnos" class="btn btn-success">Agregar</a>
                 <label > ‎ ‎ ‎ ‎ ‎ ‎   
                 ‎   Filtro: </label>
                 
@@ -43,7 +43,7 @@
                 </div>
                 <div class="col-2">
                     <button class="btn btn-warning" type="submit">Buscar</button>
-                    <form action="procesar_consulta.php" method="post">
+                    <form action="procesar_consulta" method="post">
                     <button class="btn btn-info" type="submit">Todos</button>
                     </form>
                 </div>

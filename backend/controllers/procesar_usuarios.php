@@ -39,7 +39,7 @@
     if($datos_correctos == true){
         $res = $usuarioDAO->agregarUsuario($tipo, $usuario, $pass,$correo);
         if($res == 1){
-            header('location: ../pages/login.php');
+            header('location: ../pages/login');
         }
     }else{
         $_SESSION['error_validacion'] = true;
@@ -48,7 +48,7 @@
             $_SESSION['usuario'] = $_POST['usuario'];
         }
         $_SESSION['tipo'] = $_POST['tipo'];
-        header('Location: ../pages/formulario_registro.php');
+        header('Location: ../pages/formulario_registro');
     }
 
 ?>
