@@ -111,14 +111,48 @@
 
                     <div class="form-group col-md-4">
                         <label for="inputZip">Carrera</label>
-                        <input type="text" class="form-control" id="caja_carrera" name="caja_carrera" placeholder="Carrera" value="<?php 
-                            if(isset($_SESSION['carrera'])){
-                                echo $_SESSION['carrera'];
+                        <select name="caja_carrera"  class="form-control" aria-label="Default select example">
+                            <option value="LA" <?php
+                            if(isset($_SESSION['carrera']) && $_SESSION['carrera'] === "LA"){
+                                echo 'selected';
                             }else{
-                                if(isset($_GET["carrera"])){
-                                    echo $_GET["carrera"];
-                                } 
-                            };?>">
+                                if(isset($_GET['carrera']) && $_GET['carrera'] === "LA"){
+                                    echo 'selected';  
+                                }
+                            };  
+                            ?>>LA</option>
+                            <option value="CP"  <?php if(isset($_SESSION['carrera']) && $_SESSION['carrera'] === "CP"){
+                                echo 'selected';
+                            }else{
+                                if(isset($_GET['carrera']) && $_GET['carrera'] === "CP"){
+                                    echo 'selected';  
+                                }
+                            };  ?>>CP</option>
+                            <option value="ISC"  <?php
+                            if(isset($_SESSION['carrera']) && $_SESSION['carrera'] === "ISC"){
+                                echo 'selected';
+                            }else{
+                                if(isset($_GET['carrera']) && $_GET['carrera'] === "ISC"){
+                                    echo 'selected';  
+                                }
+                            };  ?>>ISC</option>
+                            <option value="IM"  <?php if(isset($_SESSION['carrera']) && $_SESSION['carrera'] === "IM"){
+                                echo 'selected';
+                            }else{
+                                if(isset($_GET['carrera']) && $_GET['carrera'] === "IM"){
+                                    echo 'selected';  
+                                }
+                            }  ?>>IM</option>
+                            <option value="IIA"  <?php
+                            if(isset($_SESSION['carrera']) && $_SESSION['carrera'] === "IIM"){
+                                echo 'selected';
+                            }else{
+                                if(isset($_GET['carrera']) && $_GET['carrera'] === "IIM"){
+                                    echo 'selected';  
+                                }
+                            };   ?>>IIA</option>
+                        </select>
+                    
                             <div style="color:red;"> 
                             <?php  if(isset($_SESSION['err_carrera'])){
                                         echo "Solo letras";

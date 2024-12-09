@@ -94,10 +94,13 @@
 
                     <div class="form-group col-md-4">
                         <label for="inputZip">Carrera</label>
-                        <input type="text" class="form-control" id="caja_carrera" name="caja_carrera" placeholder="Carrera" value="<?php 
-                            if(isset($_SESSION['carrera'])){
-                                echo $_SESSION['carrera'];
-                            }?>">
+                        <select name="caja_carrera"  class="form-control" aria-label="Default select example">
+                            <option value="LA" <?= (isset($_SESSION['carrera']) && $_SESSION['carrera'] === "LA" )? 'selected' : '' ?>>LA</option>
+                            <option value="CP"  <?= (isset($_SESSION['carrera']) && $_SESSION['carrera'] === "CP" )? 'selected' : '' ?>>CP</option>
+                            <option value="ISC"  <?= (isset($_SESSION['carrera']) && $_SESSION['carrera'] === "ISC" )? 'selected' : '' ?>>ISC</option>
+                            <option value="IM"  <?= (isset($_SESSION['carrera']) && $_SESSION['carrera'] === "IM" )? 'selected' : '' ?>>IM</option>
+                            <option value="IIA"  <?= (isset($_SESSION['carrera']) && $_SESSION['carrera'] === "IIA" )? 'selected' : '' ?>>IIA</option>
+                        </select>
                             <div style="color:red;"> 
                             <?php  if(isset($_SESSION['err_carrera'])){
                                         echo "Solo letras";
