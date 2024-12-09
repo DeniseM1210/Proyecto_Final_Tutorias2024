@@ -1,6 +1,6 @@
 <?php
 include_once('../../database/conexion_bd.php');
-    class AlumnoDAO{
+    class TutorDAO{
         private $conexion;
 
         public function __CONSTRUCT(){
@@ -43,6 +43,10 @@ include_once('../../database/conexion_bd.php');
         }
 
         //Funcion para la edad
-
+        public function funcionEdad($nc){
+            $sql = "SELECT CalcularEdad(fecha_nacimiento) AS edad FROM tutores s WHERE Num_Control = '$nc'";
+            $res = mysqli_query($this->conexion->getConexion(), $sql);
+            return $res;
+        }
     }
 ?>

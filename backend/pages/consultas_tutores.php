@@ -12,14 +12,14 @@
     
     <div class="container">
         <br>
-        <h1>Alumnos</h1>
-        <form action="procesar_consulta_A.php" method="post">
+        <h1>Tutores</h1>
+        <form action="procesar_consulta_T.php" method="post">
             
             
 
             <div class="row justify-content-end">
                 <div class="col-2">
-                <a href="formulario_altas_alumnos" class="btn btn-success">Agregar</a>
+                <a href="formulario_altas_tutores" class="btn btn-success">Agregar</a>
                 <label > ‎ ‎ ‎ ‎ ‎ ‎   
                 ‎   Filtro: </label>
                 

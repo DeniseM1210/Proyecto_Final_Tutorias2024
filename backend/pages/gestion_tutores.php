@@ -9,13 +9,13 @@
 <body>
     <?php
         require_once('menu_principal_T.php');
-        require_once('consultas_alumnos.php');
+        require_once('consultas_tutores.php');
     ?>
 </body>
 </html>
 
 <?php
-    include_once('../controllers/controller_alumno.php');
+    include_once('../controllers/controller_tutor.php');
         
         if(isset($_POST['select']) || isset($_POST['select'])){
             $filtro = $_POST['select'];
@@ -23,27 +23,23 @@
         }else{
             $filtro = 0;
         }
-
-        
-    
-
-    $alumnoDAO = new AlumnoDAO();
+    $tutorDAO = new TutorDAO();
     if($filtro == 1){
-        $datos = $alumnoDAO->mostrarAlumnosFiltro("SELECT * FROM Alumnos WHERE Num_Control LIKE '$busqueda%'");
+        $datos = $tutorDAO->mostrarTutoresFiltro("SELECT * FROM Tutores WHERE Num_Control LIKE '$busqueda%'");
     }else if($filtro == 2){
-        $datos = $alumnoDAO->mostrarAlumnosFiltro("SELECT * FROM Alumnos WHERE Nombre LIKE '$busqueda%'");
+        $datos = $tutorDAO->mostrarTutoresFiltro("SELECT * FROM Tutores WHERE Nombre LIKE '$busqueda%'");
     }else if($filtro ==3){
-        $datos = $alumnoDAO->mostrarAlumnosFiltro("SELECT * FROM Alumnos WHERE Primer_Ap LIKE '$busqueda%'");
+        $datos = $tutorDAO->mostrarTutoresFiltro("SELECT * FROM Tutores WHERE Primer_Ap LIKE '$busqueda%'");
     }else if($filtro == 4){
-        $datos = $alumnoDAO->mostrarAlumnosFiltro("SELECT * FROM Alumnos WHERE Segundo_Ap LIKE '$busqueda%'");
+        $datos = $tutorDAO->mostrarTutoresFiltro("SELECT * FROM Tutores WHERE Segundo_Ap LIKE '$busqueda%'");
     }else if($filtro == 5){
-        $datos = $alumnoDAO->mostrarAlumnosFiltro("SELECT * FROM Alumnos WHERE Edad LIKE '$busqueda%'");
+        $datos = $tutorDAO->mostrarTutoresFiltro("SELECT * FROM Tutores WHERE Edad LIKE '$busqueda%'");
     }else if($filtro == 6){
-        $datos = $alumnoDAO->mostrarAlumnosFiltro("SELECT * FROM Alumnos WHERE Semestre LIKE '$busqueda%'");
+        $datos = $tutorDAO->mostrarTutoresFiltro("SELECT * FROM Tutores WHERE Semestre LIKE '$busqueda%'");
     }else if($filtro == 7){
-        $datos = $alumnoDAO->mostrarAlumnosFiltro("SELECT * FROM Alumnos WHERE Carrera LIKE '$busqueda%'");
+        $datos = $tutorDAO->mostrarTutoresFiltro("SELECT * FROM Tutores WHERE Carrera LIKE '$busqueda%'");
     }else{
-        $datos = $alumnoDAO->mostrarAlumnos("x");
+        $datos = $tutorDAO->mostrarTutores("x");
     }
     echo '<div class="container">';
     //var_dump($datos);
@@ -78,17 +74,17 @@
             <td>".$fila['Fecha_Nacimiento']."</td>
             <td>".$fila['Num_Telefono']."</td>
             <td> 
-            <a class='btn btn-primary' href='detallesA?nc=%s&nombre=%s&primerAp=%s&segundoAp=%s&semestre=%d&carrera=%s&fecha=%s&tel=%s'> 
+            <a class='btn btn-primary' href='detallesT?nc=%s&nombre=%s&primerAp=%s&segundoAp=%s&semestre=%d&carrera=%s&fecha=%s&tel=%s'> 
                 <i class='bi bi-eye'></i>
             </a>",$fila['Num_Control'],$fila['Nombre'],$fila['Primer_Ap'],$fila['Segundo_Ap'],$fila['Semestre'],$fila['Carrera'],$fila['Fecha_Nacimiento'],$fila['Num_Telefono']);
 
             printf("
-            <a  class='btn btn-info' href='formulario_cambios_alumnos?nc=%s&nombre=%s&primerAp=%s&segundoAp=%s&semestre=%d&carrera=%s&fecha=%s&tel=%s'>
+            <a  class='btn btn-info' href='formulario_cambios_tutores?nc=%s&nombre=%s&primerAp=%s&segundoAp=%s&semestre=%d&carrera=%s&fecha=%s&tel=%s'>
                 <i class='bi bi-pencil-square'></i>
             </a>",$fila['Num_Control'],$fila['Nombre'],$fila['Primer_Ap'],$fila['Segundo_Ap'],$fila['Semestre'],$fila['Carrera'],$fila['Fecha_Nacimiento'],$fila['Num_Telefono']);
 
             printf("
-            <a class= 'btn btn-danger' href='../../backend/controllers/procesar_bajas_alumnos.php?nc=%s'> 
+            <a class= 'btn btn-danger' href='../../backend/controllers/procesar_bajas_tutores.php?nc=%s'> 
                 <i class='bi bi-trash-fill'></i>
             </a>
 
