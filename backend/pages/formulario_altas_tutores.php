@@ -80,10 +80,35 @@
                     
                     <div class="form-group col-md-4">
                         <label for="inputState">Semestre</label>
-                        <input type="number" class="form-control" id="caja_semestre" name="caja_semestre" placeholder="Semestre" value="<?php 
-                            if(isset($_SESSION['semestre'])){
-                                echo $_SESSION['semestre'];
-                            }?>">
+                        <select name="caja_semestre"  class="form-control" aria-label="Default select example">
+                            <option value="1" <?= (isset($_SESSION['semestre']) && $_SESSION['semestre'] === "1" )? 'selected' : '' ?>>1</option>
+                                    
+                            <option value="2" <?= (isset($_SESSION['semestre']) && $_SESSION['semestre'] === "2" )? 'selected' : '' ?>>2</option>
+
+                            <option value="3" <?= (isset($_SESSION['semestre']) && $_SESSION['semestre'] === "3" )? 'selected' : '' ?>>3</option>
+
+                            <option value="4" <?= (isset($_SESSION['semestre']) && $_SESSION['semestre'] === "4" )? 'selected' : '' ?>>4</option>
+
+                            <option value="4" <?= (isset($_SESSION['semestre']) && $_SESSION['semestre'] === "4" )? 'selected' : '' ?>>4</option>
+
+                            <option value="5" <?= (isset($_SESSION['semestre']) && $_SESSION['semestre'] === "5" )? 'selected' : '' ?>>5</option>
+
+                            <option value="6" <?= (isset($_SESSION['semestre']) && $_SESSION['semestre'] === "6" )? 'selected' : '' ?>>6</option>
+
+                            <option value="7" <?= (isset($_SESSION['semestre']) && $_SESSION['semestre'] === "7" )? 'selected' : '' ?>>7</option>
+
+                            <option value="8" <?= (isset($_SESSION['semestre']) && $_SESSION['semestre'] === "8" )? 'selected' : '' ?>>8</option>
+
+                            <option value="9" <?= (isset($_SESSION['semestre']) && $_SESSION['semestre'] === "9" )? 'selected' : '' ?>>9</option>
+
+                            <option value="10" <?= (isset($_SESSION['semestre']) && $_SESSION['semestre'] === "10" )? 'selected' : '' ?>>10</option>
+
+                            <option value="11" <?= (isset($_SESSION['semestre']) && $_SESSION['semestre'] === "11" )? 'selected' : '' ?>>11</option>
+
+                            <option value="12" <?= (isset($_SESSION['semestre']) && $_SESSION['semestre'] === "12" )? 'selected' : '' ?>>12</option>
+
+                            
+                        </select>
                             <div style="color:red;"> 
                             <?php  if(isset($_SESSION['err_semestre'])){
                                         echo "Solo numeros enteros";

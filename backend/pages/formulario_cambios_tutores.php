@@ -94,14 +94,106 @@
                     
                     <div class="form-group col-md-4">
                         <label for="inputState">Semestre</label>
-                        <input type="number" class="form-control" id="caja_semestre" name="caja_semestre" placeholder="Semestre" value="<?php 
-                            if(isset($_SESSION['semestre'])){
-                                echo $_SESSION['semestre'];
+                        <select name="caja_semestre"  class="form-control" aria-label="Default select example">
+                            <option value="1" <?php
+                            if(isset($_SESSION['semestre']) && $_SESSION['semestre'] === "1"){
+                                echo 'selected';
                             }else{
-                                if(isset($_GET["semestre"])){
-                                    echo $_GET["semestre"];
-                                } 
-                            };?>">
+                                if(isset($_GET['semestre']) && $_GET['semestre'] === "1"){
+                                    echo 'selected';  
+                                }};?>>1</option>
+
+                            <option value="2" <?php
+                            if(isset($_SESSION['semestre']) && $_SESSION['semestre'] === "2"){
+                                echo 'selected';
+                            }else{
+                                if(isset($_GET['semestre']) && $_GET['semestre'] === "2"){
+                                    echo 'selected';  
+                                }};?>>2</option>
+
+<option value="3" <?php
+                            if(isset($_SESSION['semestre']) && $_SESSION['semestre'] === "3"){
+                                echo 'selected';
+                            }else{
+                                if(isset($_GET['semestre']) && $_GET['semestre'] === "3"){
+                                    echo 'selected';  
+                                }};?>>3</option>
+
+<option value="4" <?php
+                            if(isset($_SESSION['semestre']) && $_SESSION['semestre'] === "4"){
+                                echo 'selected';
+                            }else{
+                                if(isset($_GET['semestre']) && $_GET['semestre'] === "4"){
+                                    echo 'selected';  
+                                }};?>>4</option>
+
+<option value="5" <?php
+                            if(isset($_SESSION['semestre']) && $_SESSION['semestre'] === "5"){
+                                echo 'selected';
+                            }else{
+                                if(isset($_GET['semestre']) && $_GET['semestre'] === "5"){
+                                    echo 'selected';  
+                                }};?>>5</option>
+
+<option value="6" <?php
+                            if(isset($_SESSION['semestre']) && $_SESSION['semestre'] === "6"){
+                                echo 'selected';
+                            }else{
+                                if(isset($_GET['semestre']) && $_GET['semestre'] === "6"){
+                                    echo 'selected';  
+                                }};?>>6</option>
+
+<option value="7" <?php
+                            if(isset($_SESSION['semestre']) && $_SESSION['semestre'] === "7"){
+                                echo 'selected';
+                            }else{
+                                if(isset($_GET['semestre']) && $_GET['semestre'] === "7"){
+                                    echo 'selected';  
+                                }};?>>7</option>
+
+                            <option value="8" <?php
+                            if(isset($_SESSION['semestre']) && $_SESSION['semestre'] === "8"){
+                                echo 'selected';
+                            }else{
+                                if(isset($_GET['semestre']) && $_GET['semestre'] === "8"){
+                                    echo 'selected';  
+                                }};?>>8</option>
+
+                            <option value="9" <?php
+                            if(isset($_SESSION['semestre']) && $_SESSION['semestre'] === "9"){
+                                echo 'selected';
+                            }else{
+                                if(isset($_GET['semestre']) && $_GET['semestre'] === "9"){
+                                    echo 'selected';  
+                                }};?>>9</option>
+
+                            <option value="10" <?php
+                            if(isset($_SESSION['semestre']) && $_SESSION['semestre'] === "10"){
+                                echo 'selected';
+                            }else{
+                                if(isset($_GET['semestre']) && $_GET['semestre'] === "10"){
+                                    echo 'selected';  
+                                }};?>>10</option>
+
+                            <option value="11" <?php
+                            if(isset($_SESSION['semestre']) && $_SESSION['semestre'] === "11"){
+                                echo 'selected';
+                            }else{
+                                if(isset($_GET['semestre']) && $_GET['semestre'] === "11"){
+                                    echo 'selected';  
+                                }};?>>11</option>
+
+                            <option value="12" <?php
+                            if(isset($_SESSION['semestre']) && $_SESSION['semestre'] === "12"){
+                                echo 'selected';
+                            }else{
+                                if(isset($_GET['semestre']) && $_GET['semestre'] === "12"){
+                                    echo 'selected';  
+                                }};?>>12</option>
+
+
+                            
+                        </select>
                             <div style="color:red;"> 
                             <?php  if(isset($_SESSION['err_semestre'])){
                                         echo "Solo numeros enteros";
