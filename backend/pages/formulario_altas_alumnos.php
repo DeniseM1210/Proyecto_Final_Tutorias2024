@@ -196,4 +196,6 @@
     unset($_SESSION['err_semestre']);
     unset($_SESSION['err_carrera']);
     unset($_SESSION['err_tel']);
+
+    
 ?>

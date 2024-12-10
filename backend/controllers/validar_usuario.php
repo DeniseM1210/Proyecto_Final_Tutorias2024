@@ -21,11 +21,10 @@ if($atributos['success']==false){
     }
 //Verificacion de User and Password en BD
 
-include_once('../../database/conexion_bd.php');
+require_once('../../database/conexion_bd.php');
 
 
-$con = new ConexionBD();
-$conexion = $con->getConexion();
+$conexion = ConexionBD::getInstance()->getConexion();
 
 if($conexion){
     //$sql = "SELECT * FROM usuarios WHERE Nombre_Usuario = '$usuario' AND Password = '$password';";
@@ -36,7 +35,6 @@ if($conexion){
     $res = mysqli_query($conexion,$sql);
     if(mysqli_num_rows($res)==1){
         //echo "usuario encontrado";
-        
         $_SESSION['valida']= true;
         $_SESSION['usuario'] = $usuario;
         $_SESSION['tipo_u'] = $tipo;

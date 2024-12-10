@@ -1,8 +1,7 @@
 <?php
 
 include_once('../database/conexion_bd.php');
-$con = new ConexionBD();
-$conexion = $con->getConexion();
+$conexion = ConexionBD::getInstance()->getConexion();
 
 //recibir la peticion con JSON a traves de HTTP
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
