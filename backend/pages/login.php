@@ -60,7 +60,7 @@
                         <div class="g-recaptcha" data-sitekey="6LcluZAqAAAAANUF7-BLesasasSj4NXKaDvIBeYA"></div>
                         <div style="color:red;"> 
                             <?php  if(isset($_SESSION['capchat'])){
-                                        echo "rellena el capchat";
+                                        echo "rellena el captcha";
                                     } ?>
                         </div>
                     </div>

@@ -42,6 +42,12 @@ include_once('../../database/conexion_bd.php');
             return $res;
         }
 
+        public function mostrarLogEliminacion($filtro){
+            $sql = "SELECT * FROM log_eliminacion;";
+            $res = mysqli_query($this->conexion->getConexion(), $sql);
+            return $res;
+        }
+
         //Funcion para la edad
         public function funcionEdad($nc){
             $sql = "SELECT CalcularEdad(fecha_nacimiento) AS edad FROM tutores s WHERE Num_Control = '$nc'";
