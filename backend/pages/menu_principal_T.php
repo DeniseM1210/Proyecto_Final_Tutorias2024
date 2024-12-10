@@ -41,7 +41,7 @@
                     <a style="color: white;" class="nav-link" aria-current="page" href="gestion_grupos">Grupos </a>
                 </li>
                 <li class="nav-item">
-                    <a style="color: white;" class="nav-link" aria-current="page" href="gestion_grupos">Gestion eliminacion alumnos </a>
+                    <a style="color: white;" class="nav-link" aria-current="page" href="gestion_log">Gestion eliminacion alumnos </a>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0" action="../controllers/cerrar_sesion.php" method="POST">
