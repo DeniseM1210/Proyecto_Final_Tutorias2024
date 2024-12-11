@@ -44,7 +44,7 @@ include_once('../../database/conexion_bd.php');
 
         public function mostrarLogEliminacion($filtro){
             $sql = "SELECT * FROM log_eliminacion;";
-            $res = mysqli_query($this->conexion->getConexion(), $sql);
+            $res = mysqli_query($this->conexion, $sql);
             return $res;
         }
 
