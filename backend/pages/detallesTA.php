@@ -7,7 +7,7 @@
 </head>
 <body>
     <?php
-        require_once('menu_principal_T.php');
+        require_once('menu_principal_A.php');
         include('../controllers/controller_tutor.php');
     ?>
 

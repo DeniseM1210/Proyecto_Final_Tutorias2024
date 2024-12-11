@@ -1,7 +1,7 @@
 <?php
     session_start();   
     if(!isset($_SESSION['valida'])){
-        header('location: login.php');
+        header('location: login');
     }
 ?>
 <!DOCTYPE html>

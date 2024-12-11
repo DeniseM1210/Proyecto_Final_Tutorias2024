@@ -93,7 +93,7 @@
                 <div class="form-row">
                     
                     <div class="form-group col-md-4">
-                        <label for="inputState">Semestre</label>
+                        <label for="inputState">Semestre a tutorar</label>
                         <select name="caja_semestre"  class="form-control" aria-label="Default select example">
                             <option value="1" <?php
                             if(isset($_SESSION['semestre']) && $_SESSION['semestre'] === "1"){
@@ -202,7 +202,7 @@
                     </div>
 
                     <div class="form-group col-md-4">
-                        <label for="inputZip">Carrera</label>
+                        <label for="inputZip">Carrera a tutorar</label>
                         <select name="caja_carrera"  class="form-control" aria-label="Default select example">
                             <option value="LA" <?php
                             if(isset($_SESSION['carrera']) && $_SESSION['carrera'] === "LA"){

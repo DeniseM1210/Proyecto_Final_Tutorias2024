@@ -19,6 +19,8 @@
     $tutorDAO = new TutorDAO();
     $datos = $tutorDAO->mostrarTutores("x");
 
+    echo '<div class="container">';
+
     if(mysqli_num_rows($datos)>0){
         
         echo'<div class="table-responsive" style="overflow-y: scroll; height: 425px;"><table class="table table-success table-striped" style="overflow-y: scroll;">';
@@ -42,7 +44,7 @@
             <td>".$fila['Semestre']."</td>
             <td>".$fila['Carrera']."</td>
             <td> 
-            <a class='btn btn-primary' href='detallesT?nc=%s&nombre=%s&primerAp=%s&segundoAp=%s&semestre=%d&carrera=%s&fecha=%s&tel=%s'> 
+            <a class='btn btn-primary' href='detallesTA?nc=%s&nombre=%s&primerAp=%s&segundoAp=%s&semestre=%d&carrera=%s&fecha=%s&tel=%s'> 
                 <i class='bi bi-eye'></i>
             </a>",$fila['Num_Control'],$fila['Nombre'],$fila['Primer_Ap'],$fila['Segundo_Ap'],$fila['Semestre'],$fila['Carrera'],$fila['Fecha_Nacimiento'],$fila['Num_Telefono']);
 
