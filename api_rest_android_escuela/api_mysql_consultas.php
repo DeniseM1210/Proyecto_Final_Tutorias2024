@@ -12,14 +12,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         //recibir la peticion con JSON a traves de HTTP
         $consulta_con_filtros = json_decode($cadenaJSON, true);
-        $fnc = $consulta_con_filtros['fnc'];
-        $fn = $consulta_con_filtros['fn'];
-        $fpAp = $consulta_con_filtros['fpAp'];
-        $fsAp = $consulta_con_filtros['fsAp'];
-        $fs = $consulta_con_filtros['fs'];
-        $fc = $consulta_con_filtros['fc'];
-        $ff = $consulta_con_filtros['ff'];
-        $ft = $consulta_con_filtros['ft'];
+        $fnc = $consulta_con_filtros['nc'];
+        $fn = $consulta_con_filtros['n'];
+        $fpAp = $consulta_con_filtros['pAp'];
+        $fsAp = $consulta_con_filtros['sAp'];
+        $fs = $consulta_con_filtros['s'];
+        $fc = $consulta_con_filtros['c'];
+        $ff = $consulta_con_filtros['f'];
+        $ft = $consulta_con_filtros['t'];
 
         $sql = "SELECT * FROM Alumnos;";
         $res = mysqli_query($conexion, $sql);
