@@ -13,15 +13,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         //recibir la peticion con JSON a traves de HTTP
         $consulta_con_filtros = json_decode($cadenaJSON, true);
         $fnc = $consulta_con_filtros['nc'];
-        $fn = $consulta_con_filtros['n'];
-        $fpAp = $consulta_con_filtros['pAp'];
-        $fsAp = $consulta_con_filtros['sAp'];
-        $fs = $consulta_con_filtros['s'];
-        $fc = $consulta_con_filtros['c'];
-        $ff = $consulta_con_filtros['f'];
-        $ft = $consulta_con_filtros['t'];
-
-        $sql = "SELECT * FROM Alumnos;";
+        
+        if($fnc == ""){
+            $sql = "SELECT * FROM Alumnos;";
+        }else{
+            $sql = "SELECT * FROM Alumnos WHERE Num_Control LIKE '$fnc%';";
+        }
+        
         $res = mysqli_query($conexion, $sql);
         //configurar RESPUESTA JSON (RESPONSE)
         $respuesta['alumnos'] = array();
@@ -38,9 +36,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $alumno['t'] = $fila['Num_Telefono'];
                 array_push($respuesta['alumnos'], $alumno);
             }
-            $respuesta['consulta'] = 'exito';
+            $respuesta['res'] = 'exito';
         } else {
-            $respuesta['consulta'] = 'no hay registros';
+            $respuesta['res'] = 'no hay registros';
         }
         $respuestaJSON = json_encode($respuesta);
         echo $respuestaJSON;

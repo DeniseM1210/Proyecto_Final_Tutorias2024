@@ -19,9 +19,9 @@
             //configurar RESPUESTA JSON (RESPONSE)
             $respuesta = array();
             if($res){
-                $respuesta['delete'] = 'exito';
+                $respuesta['res'] = 'exito';
             }else{
-                $respuesta['delete'] = 'fracaso';
+                $respuesta['res'] = 'fracaso';
             }
             $respuestaJSON = json_encode($respuesta);
             echo $respuestaJSON;

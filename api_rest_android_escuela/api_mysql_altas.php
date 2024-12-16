@@ -27,9 +27,9 @@
             //configurar RESPUESTA JSON (RESPONSE)
             $respuesta = array();
             if($res){
-                $respuesta['alta'] = 'exito';
+                $respuesta['res'] = 'exito';
             }else{
-                $respuesta['alta'] = 'fracaso';
+                $respuesta['res'] = 'fracaso';
             }
             $respuestaJSON = json_encode($respuesta);
             echo $respuestaJSON;
