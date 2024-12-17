@@ -86,9 +86,10 @@
     if($datos_correctos==true){
         $alumnoDAO = new AlumnoDAO();
         $res = $alumnoDAO->agregarAlumno($num_control,$nombre,$primerAp,$segundoAp,$semestre,$carrera,$fecha,$tel);
+        $unico = $alumnoDAO->mostrarAlumnosFiltro("SELECT * FROM alumnos WHERE Num_Control = '$num_control';");
         
         
-        if($res==1){
+        if($res==1 && mysqli_num_rows($unico) == 0){
             $_SESSION['insercion_correcta'] = true;
             header('Location: ../pages/formulario_altas_alumnos');
         }else{

@@ -14,8 +14,15 @@
     ?>
     <div class="container">
         <h2>Agregar Tutor</h1>
-            <div style="display:<?php echo isset($_SESSION['insercion_correcta']) ?'content':'none' ;?>;" class="alert alert-success alert-dismissible fade show" role="alert">
+            <div style="display:<?php echo (isset($_SESSION['insercion_correcta']) && $_SESSION['insercion_correcta'] == true ) ?'content':'none' ;?>;" class="alert alert-success alert-dismissible fade show" role="alert">
                 Registro agregado correctamente
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            </div><div style="display:<?php echo 
+            (isset($_SESSION['insercion_correcta']) && $_SESSION['insercion_correcta'] == false )?'content':'none' ;?>;" class="alert alert-danger alert-dismissible fade show" role="alert">
+                Registro NO correctamente
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>

@@ -86,9 +86,10 @@
     if($datos_correctos==true){
         $tutorDAO = new TutorDAO();
         $res = $tutorDAO->agregarTutor($num_control,$nombre,$primerAp,$segundoAp,$semestre,$carrera,$fecha,$tel);
+        $unico = $tutorDAO->mostrarTutoresFiltro("SELECT * FROM tutores WHERE Num_Control = '$num_control';");
         
         
-        if($res==1){
+        if($res==1 && mysqli_num_rows($unico) == 0){
             $_SESSION['insercion_correcta'] = true;
             header('Location: ../pages/formulario_altas_tutores');
         }else{
