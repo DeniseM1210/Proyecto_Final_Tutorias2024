@@ -29,7 +29,7 @@
     }
 
     $usuarioDAO = new UsuarioDAO();
-    $consulta = $usuarioDAO->buscarUsuarioU($usuario);
+    $consulta = $usuarioDAO->buscarUsuarioUP($usuario,$pass);
     echo mysqli_num_rows($consulta);
     if(mysqli_num_rows($consulta)>=1){    
         $datos_correctos = false;

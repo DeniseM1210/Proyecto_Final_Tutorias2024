@@ -24,7 +24,6 @@
     $dcfecha = false;
     $dctel = false;
     session_start();
-
     
     if(!isset($num_control) || empty($num_control) || !is_numeric($num_control) || !ctype_digit($num_control)){
         $dcnc = false;
@@ -85,17 +84,23 @@
     
     if($datos_correctos==true){
         $alumnoDAO = new AlumnoDAO();
-        $res = $alumnoDAO->agregarAlumno($num_control,$nombre,$primerAp,$segundoAp,$semestre,$carrera,$fecha,$tel);
         $unico = $alumnoDAO->mostrarAlumnosFiltro("SELECT * FROM alumnos WHERE Num_Control = '$num_control';");
-        
-        
+        if( mysqli_num_rows($unico) == 0){
+            $res = $alumnoDAO->agregarAlumno($num_control,$nombre,$primerAp,$segundoAp,$semestre,$carrera,$fecha,$tel);
+        }
         if($res==1 && mysqli_num_rows($unico) == 0){
             $_SESSION['insercion_correcta'] = true;
             header('Location: ../pages/formulario_altas_alumnos');
         }else{
             $_SESSION['insercion_correcta'] = false;
+            $_SESSION['nombre'] = $_POST['caja_nombre'];
+            $_SESSION['carrera'] = $_POST['caja_carrera'];
+            $_SESSION['pAp'] = $_POST['caja_primerAp'];
+            $_SESSION['sAp'] = $_POST['caja_segundoAp'];
+            $_SESSION['semestre'] = $_POST['caja_semestre'];
+            $_SESSION['fecha'] = $_POST['caja_fecha'];
+            $_SESSION['tel'] = $_POST['caja_tel'];
             header('Location: ../pages/formulario_altas_alumnos');
-            
         }
         }else{
             $_SESSION['error_validacion'] = true;

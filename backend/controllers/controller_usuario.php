@@ -32,6 +32,11 @@
             return $res;
         }
 
+        public function buscarUsuarioUP($user,$pass){
+            $sql = "SELECT * FROM usuarios WHERE usuario = sha1('$user') AND password = sha1('$pass');";
+            $res = mysqli_query($this->conexion, $sql);
+            return $res;
+        }
         
     }
 
