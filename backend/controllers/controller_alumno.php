@@ -11,7 +11,10 @@ include_once('../../database/conexion_bd.php');
 
         //Altas
         public function agregarAlumno($nc,$nombre,$primerAp,$segundoAp,$semestre,$carrera,$fecha,$numTel){
-            try {
+            $sql = "INSERT INTO alumnos VALUES('$nc', '$nombre', '$primerAp', '$segundoAp', $semestre, '$carrera','$fecha','$numTel')";
+            $res = mysqli_query($this->conexion, $sql);
+            return $res;
+            /* try {
                 $this->conexion->begin_transaction();
                 $sql = "INSERT INTO alumnos VALUES('$nc', '$nombre', '$primerAp', '$segundoAp', $semestre, '$carrera','$fecha','$numTel')";
                 $res = mysqli_query($this->conexion, $sql);
@@ -22,6 +25,7 @@ include_once('../../database/conexion_bd.php');
                 $this->conexion->rollBack();
                 echo "Error en la transacción: " . $e->getMessage();
             }
+                */
            
         }
 
