@@ -151,7 +151,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
                     <label for="inputEmail4">Numero de Telefono</label>
-                        <input type="tel" class="form-control" id="caja_tel" name="caja_tel" placeholder="# de Telefono"
+                        <input type="tel" class="form-control" id="caja_tel" name="caja_tel" placeholder="# de Telefono" maxlength="10"
                         value="<?php 
                             if(isset($_SESSION['tel'])){
                                 echo $_SESSION['tel'];

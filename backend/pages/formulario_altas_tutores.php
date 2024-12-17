@@ -24,7 +24,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-5">
                         <label for="inputEmail4">Numero de Control</label>
-                        <input type="text" class="form-control" id="caja_nc" name="caja_nc" placeholder="Numero de Control"
+                        <input type="text" class="form-control" id="caja_nc" name="caja_nc" placeholder="Numero de Control" maxlength="8"
                         value="<?php 
                             if(isset($_SESSION['nc'])){
                                 echo $_SESSION['nc'];
@@ -151,7 +151,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
                     <label for="inputEmail4">Numero de Telefono</label>
-                        <input type="tel" class="form-control" id="caja_tel" name="caja_tel" placeholder="# de Telefono"
+                        <input type="tel" class="form-control" id="caja_tel" name="caja_tel" placeholder="# de Telefono" maxlength="10"
                         value="<?php 
                             if(isset($_SESSION['tel'])){
                                 echo $_SESSION['tel'];
