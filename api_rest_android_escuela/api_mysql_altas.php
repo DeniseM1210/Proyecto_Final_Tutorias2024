@@ -21,6 +21,8 @@
             $t = $datos_alumno['t'];
 
             
+            
+
             $sql = "INSERT INTO Alumnos VALUES('$nc','$n','$pAp','$sAp',$s,'$c','$f','$t');";
             $res = mysqli_query($conexion,$sql);
             
